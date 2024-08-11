@@ -1,0 +1,8 @@
+@design-tokens url('../../../../design-tokens.json') format('style-dictionary3');
+
+.cli {
+	grid-area: cli;
+	overflow: hidden;
+	font-size: 18px;
+	line-height: 1.5;
+}

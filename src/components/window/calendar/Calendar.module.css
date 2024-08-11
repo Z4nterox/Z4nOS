@@ -1,0 +1,28 @@
+@design-tokens url('../../../../design-tokens.json') format('style-dictionary3');
+
+.calendar {
+	grid-area: calendar;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+@media only screen and (max-width: design-token('layout.maxWidth.step2')) {
+	.calendar {
+		display: none;
+	}
+}
+
+@media only screen and (max-height: design-token('layout.maxHeight.step2')) {
+	.calendar {
+		display: none;
+	}
+}
+
+@media only screen and (min-height: design-token('layout.minHeight.step1')) {
+	.calendar {
+		display: none;
+	}
+}

@@ -1,0 +1,53 @@
+{
+	"color": {
+		"primary": {
+			"value": "#1793D1"
+		},
+		"statusbar": {
+			"value": "#1f343f"
+		},
+		"error": {
+			"value": "#f44336"
+		},
+		"success": {
+			"value": "#66bb6a"
+		},
+		"warning": {
+			"value": "#ffa726"
+		}
+	},
+	"layout": {
+		"maxWidth": {
+			"step1": {
+				"value": "1392px"
+			},
+			"step2": {
+				"value": "1024px"
+			},
+			"step3": {
+				"value": "605px"
+			}
+		},
+		"minHeight": {
+			"step1": {
+				"value": "1040px"
+			}
+		},
+		"maxHeight": {
+			"step1": {
+				"value": "824px"
+			},
+			"step2": {
+				"value": "760px"
+			}
+		}
+	},
+	"size": {
+		"gap": {
+			"value": "8px"
+		},
+		"borderRadius": {
+			"value": "8px"
+		}
+	}
+}

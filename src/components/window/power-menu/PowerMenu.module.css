@@ -1,0 +1,28 @@
+@design-tokens url('../../../../design-tokens.json') format('style-dictionary3');
+
+.powerMenu {
+	grid-area: powerMenu;
+	overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@media only screen and (max-width: design-token('layout.maxWidth.step1')) {
+	.powerMenu {
+		display: none;
+	}
+}
+
+@media only screen and (max-height: design-token('layout.maxHeight.step2')) {
+	.powerMenu {
+		display: none;
+	}
+}
+
+@media only screen and (min-height: design-token('layout.minHeight.step1')) {
+	.powerMenu {
+		display: none;
+	}
+}

@@ -1,0 +1,77 @@
+@design-tokens url('../../design-tokens.json') format('style-dictionary3');
+
+* {
+	box-sizing: border-box;
+	scrollbar-width: thin;
+	scrollbar-color: #fff transparent;
+}
+
+*::-webkit-scrollbar {
+	width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+	background: transparent;
+	border-radius: design-token('size.borderRadius');
+}
+
+*::-webkit-scrollbar-thumb {
+	background-color: transparent;
+	border-radius: design-token('size.borderRadius');
+	border: 4px solid #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background-color: transparent;
+}
+
+html,
+body,
+main {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	font-size: 14px;
+	line-height: 1.5;
+	background-image: url('/images/Background.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+#__next {
+	height: 100%;
+	width: 100%;
+}
+
+.unselectable {
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	user-select: none;
+}
+
+.console {
+	background-color: rgb(23, 25, 26, 0.8);
+	border-radius: design-token('size.borderRadius');
+	color: #fff;
+	padding: design-token('size.gap');
+}
+
+.kernelPanic {
+	color: #fff;
+	background-color: #000;
+	display: block;
+	font-family: 'Segoe UI Regular';
+	height: 100%;
+	position: absolute;
+	width: 100%;
+}
+
+.terminalString {
+	color: design-token('color.primary');
+	font-weight: bold;
+}

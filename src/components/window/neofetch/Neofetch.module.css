@@ -1,0 +1,58 @@
+@design-tokens url('../../../../design-tokens.json') format('style-dictionary3');
+
+.neofetch {
+	grid-area: neofetch;
+	overflow: hidden;
+}
+
+@media only screen and (max-width: design-token('layout.maxWidth.step1')) {
+	.neofetch {
+		display: none;
+	}
+}
+
+@media only screen and (max-height: design-token('layout.maxHeight.step2')) {
+	.neofetch {
+		display: none;
+	}
+}
+
+@media only screen and (min-height: design-token('layout.minHeight.step1')) {
+	.neofetch {
+		display: none;
+	}
+}
+
+.colorFieldContainer {
+	margin-top: 8px;
+}
+
+@media only screen and (max-height: design-token('layout.maxHeight.step1')) {
+	.colorFieldContainer {
+		display: none;
+	}
+}
+
+.colorFieldRow {
+	display: flex;
+	flex-direction: row;
+}
+
+.colorField {
+	width: 24px;
+	height: 20px;
+}
+
+.neofetchOutput {
+	display: flex;
+	flex-direction: row;
+	gap: 24px;
+	align-items: center;
+}
+
+@media only screen and (max-width: design-token('layout.maxWidth.step3')) {
+	.neofetchOutput {
+		flex-direction: column;
+		align-items: start;
+	}
+}

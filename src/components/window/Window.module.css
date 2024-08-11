@@ -1,0 +1,38 @@
+@design-tokens url('../../../design-tokens.json') format('style-dictionary3');
+
+.window {
+	box-sizing: border-box;
+	width: 100%;
+	height: calc(100% - 20px);
+	padding: design-token('size.gap');
+	background-image: url('/images/Background.jpeg');
+	background-repeat: no-repeat;
+	background-size: cover;
+	display: grid;
+	grid-gap: design-token('size.gap');
+	grid-template-areas:
+		'cli calendar weather powerMenu'
+		'cli neofetch neofetch neofetch';
+	grid-template-columns: 1fr 288px 288px 64px;
+	grid-template-rows: 45fr 55fr;
+	overflow: hidden;
+}
+
+@media only screen and (max-width: design-token('layout.maxWidth.step1')) {
+	.window {
+		grid-template-areas:
+			'cli calendar'
+			'cli weather';
+		grid-template-columns: 1fr 288px;
+	}
+}
+
+@media only screen and (max-width: design-token('layout.maxWidth.step2')),
+	only screen and (max-height: design-token('layout.maxHeight.step2')),
+	only screen and (min-height: design-token('layout.minHeight.step1')) {
+	.window {
+		grid-template-areas: 'cli';
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+	}
+}

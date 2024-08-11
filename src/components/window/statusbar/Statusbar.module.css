@@ -1,0 +1,96 @@
+@design-tokens url('../../../../design-tokens.json') format('style-dictionary3');
+
+.statusbar {
+	height: 100%;
+	width: 100%;
+	background-color: design-token('color.statusbar');
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-between;
+	font-size: 16px;
+	color: #fff;
+}
+
+.blockPages {
+	width: 40px;
+	margin-left: 4px;
+	display: flex;
+	flex-direction: row;
+	gap: 4px;
+}
+
+.blockStatus {
+	width: calc(100% - 40px);
+	display: flex;
+	flex-direction: row;
+	justify-content: end;
+	gap: 8px;
+	margin-right: 4px;
+}
+
+@media only screen and (max-width: 1135px) {
+	.blockStatusWifi {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 1040px) {
+	.blockStatusEthernet {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 790px) {
+	.blockStatusBattery {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 675px) {
+	.blockStatusSound {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 555px) {
+	.blockStatusCPULoad {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 485px) {
+	.blockStatusCPUTemp {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 405px) {
+	.blockStatusDatetime {
+		display: none;
+	}
+}
+
+@media only screen and (max-width: 205px) {
+	.statusbar {
+		justify-content: end;
+	}
+
+	.blockPages {
+		display: none;
+		width: none;
+	}
+
+	.blockStatus {
+		width: 100%;
+	}
+
+	.blockStatusCopyright {
+		width: 100%;
+		margin-bottom: 1px;
+		display: flex;
+		flex-direction: row;
+		justify-content: end;
+	}
+}
