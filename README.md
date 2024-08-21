@@ -32,10 +32,6 @@ Follow these steps to set up and run the project locally:
    ```
    Once the build process is complete, you can find the generated files in the `out` folder, ready for deployment on your web server.
 
-## Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](../../issues) if you have any questions or ideas.
-
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
