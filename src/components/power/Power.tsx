@@ -136,7 +136,7 @@ export default function Power(props: Props) {
 						style={{ lineHeight: '0.5', color: 'var(--color-primary)', cursor: 'pointer' }}
 					>
 						<motion.div whileHover={{ fontSize: '112px' }} whileTap={{ fontSize: '100px' }} style={{ fontSize: '96px' }}>
-							<SymbolText>襤</SymbolText>
+							<SymbolText>襤</SymbolText>
 						</motion.div>
 					</motion.div>
 				</div>
