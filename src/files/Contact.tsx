@@ -32,7 +32,7 @@ export default function Contact() {
 					z4nterox
 				</li>
 				<li>
-					<a style={{ color: DesignTokens.color.primary.value }} href="mailto:email@example.com">
+					<a style={{ color: DesignTokens.color.primary.value }} href="mailto:contact@z4nterox.dev">
 						contact@z4nterox.dev
 					</a>
 				</li>
