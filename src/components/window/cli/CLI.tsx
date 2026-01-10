@@ -61,7 +61,7 @@ interface CLIProps {
 
 export default function CLI(props: CLIProps) {
 	const [input, setInput] = useState<string>('');
-	const [history, setHistory] = useState<{ command: string; output: string | JSX.Element | null }[]>([]);
+	const [history, setHistory] = useState<{ command: string; output: React.ReactNode }[]>([]);
 	const [commandHistory, setCommandHistory] = useState<string[]>([]);
 	const [commandHistoryIndex, setCommandHistoryIndex] = useState<number>(-1);
 	const [matches, setMatches] = useState<string[]>([]);
@@ -87,7 +87,7 @@ export default function CLI(props: CLIProps) {
 		return <ColoredText>{currentPath.replace('/home/z4nterox', '~')} ➜</ColoredText>;
 	}
 
-	const commands: { [key: string]: string | ((...args: any[]) => null | string | JSX.Element) | JSX.Element } = {
+	const commands: { [key: string]: string | ((...args: any[]) => React.ReactNode) | React.ReactNode } = {
 		btw: (
 			<div>
 				I&apos;m using Arch <SymbolText></SymbolText>
