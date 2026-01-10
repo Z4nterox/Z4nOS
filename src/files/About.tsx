@@ -5,46 +5,38 @@ import ColoredText from '@/components/general/ColoredText';
 export default function About() {
 	return (
 		<div>
-			I&apos;m a <ColoredText>frontend</ColoredText> and backend developer from Germany.
-			<br />
-			<br />
-			I am currently writing my diploma thesis for the completion of my computer science studies at the Dresden University of Applied
-			Sciences. Employed at said institution as a NextJS developer. <br />
-			<br />
-			Things I enjoy:
+			<p>
+				I&apos;m a <ColoredText>full-stack developer</ColoredText> based in Germany.
+			</p>
+			<p>
+				I hold a diploma in Computer Science from the Dresden University of Applied Sciences and currently work as a{' '}
+				<ColoredText>Software Engineer</ColoredText> in the healthcare sector at a leading clinic specializing in cancer research.
+			</p>
+			<p>Beyond coding, here are a few things I enjoy:</p>
 			<ul>
 				<li>
-					Experiencing new <ColoredText>technologies</ColoredText>
+					Exploring new <ColoredText>technologies</ColoredText>
 				</li>
 				<li>
-					Books, movies, games; in other words:
-					<br />
-					<ColoredText> stories</ColoredText> in whatever form they come in
+					<ColoredText>Stories</ColoredText> in all their forms, be it books, films, and games
 				</li>
 				<li>
-					<ColoredText>Nature</ColoredText> and going for a walk
+					Spending time in <ColoredText>nature</ColoredText> and going for walks
 				</li>
 				<li>
-					<ColoredText>Traveling</ColoredText> around the world; Countries/Places I&apos;ve been to:
+					<ColoredText>Traveling</ColoredText> around the world. Places I&apos;ve visited include:
 					<ul>
 						<li>Canada, USA</li>
 						<li>England, Ireland, Scotland</li>
 						<li>Finland, Norway, Sweden</li>
-						<li>Spain</li>
-						<li>Korsika</li>
+						<li>Spain, Corsica, Italy</li>
 						<li>Iceland</li>
-						<li>Italy</li>
 						<li>Namibia</li>
 					</ul>
 				</li>
 				<li>
-					<ColoredText>Milk chocolate</ColoredText>
-				</li>
-				<li>
-					<ColoredText>Ice Tea</ColoredText> peach flavour
-				</li>
-				<li>
-					<ColoredText>Earl Grey</ColoredText> with milk and two sugar
+					<ColoredText>Milk chocolate</ColoredText>, peach <ColoredText>iced tea</ColoredText>, and{' '}
+					<ColoredText>Earl Grey</ColoredText> with milk and two sugars
 				</li>
 			</ul>
 		</div>

@@ -23,7 +23,12 @@ export function cat(fileStructure: Dictionary<FileItem[]>, currentPath: string, 
 	}
 }
 
-export function cd(currentPath: string, setPathState: React.Dispatch<React.SetStateAction<string>>, directory?: string) {
+export function cd(
+	fileStructure: Dictionary<FileItem[]>,
+	currentPath: string,
+	setPathState: React.Dispatch<React.SetStateAction<string>>,
+	directory?: string
+) {
 	if (!directory) {
 		setPathState('/home/z4nterox');
 	} else if (directory === '.') {
@@ -35,7 +40,14 @@ export function cd(currentPath: string, setPathState: React.Dispatch<React.SetSt
 			setPathState((prev) => prev.slice(0, prev.lastIndexOf('/')));
 		}
 	} else {
-		setPathState((prev) => (prev === '/' ? prev + directory : prev + '/' + directory));
+		const item = fileStructure[currentPath]?.find((item) => item.name === directory);
+		if (!item) {
+			return `cd: '${directory}': No such file or directory`;
+		} else if (!item.isDirectory) {
+			return `cd: '${directory}': Not a directory`;
+		} else {
+			setPathState((prev) => (prev === '/' ? prev + directory : prev + '/' + directory));
+		}
 	}
 }
 
@@ -73,6 +85,63 @@ export function ls(fileStructure: Dictionary<FileItem[]>, currentPath: string, p
 	}
 }
 
+export function echo(text?: string) {
+	return text || '';
+}
+
+export function date() {
+	return new Date().toLocaleString('en-US', {
+		weekday: 'short',
+		year: 'numeric',
+		month: 'short',
+		day: 'numeric',
+		hour: '2-digit',
+		minute: '2-digit',
+		second: '2-digit',
+	});
+}
+
+export function uptime(startTime: Date) {
+	const now = new Date();
+	const diff = now.getTime() - startTime.getTime();
+
+	const seconds = Math.floor(diff / 1000) % 60;
+	const minutes = Math.floor(diff / (1000 * 60)) % 60;
+	const hours = Math.floor(diff / (1000 * 60 * 60));
+
+	return `up ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
+}
+
+export function sudo() {
+	return "Nice try, but you're not in the sudoers file. This incident will be reported.";
+}
+
+export function rm_rf() {
+	return 'Permission denied. Did you really think that would work?';
+}
+
+export function man(command?: string) {
+	if (!command) {
+		return "What manual page do you want? Try 'help' for a list of commands.";
+	}
+	return `No manual entry for ${command}. Try 'help' instead.`;
+}
+
+export function history(commandHistory: string[]) {
+	if (commandHistory.length === 0) {
+		return 'No commands in history.';
+	}
+	return (
+		<>
+			{commandHistory.map((cmd, index) => (
+				<div key={index}>
+					{index + 1} {cmd}
+				</div>
+			))}
+		</>
+	);
+}
+
 export function help() {
 	return (
 		<span>
@@ -86,11 +155,19 @@ export function help() {
 			<br />
 			<ColoredText>codesolver [QUERY]</ColoredText> - solves any code related problem
 			<br />
+			<ColoredText>date</ColoredText> - display the current date and time
+			<br />
+			<ColoredText>echo [TEXT]</ColoredText> - display a line of text
+			<br />
 			<ColoredText>help</ColoredText> - shows this text
+			<br />
+			<ColoredText>history</ColoredText> - display command history
 			<br />
 			<ColoredText>logout</ColoredText> - end session on the system
 			<br />
 			<ColoredText>ls</ColoredText> - list directory contents
+			<br />
+			<ColoredText>man [COMMAND]</ColoredText> - display manual pages
 			<br />
 			<ColoredText>neofetch</ColoredText> - command-line system information tool
 			<br />
@@ -101,6 +178,10 @@ export function help() {
 			<ColoredText>reboot</ColoredText> - reboot the system
 			<br />
 			<ColoredText>source</ColoredText> - link to the source code of this project
+			<br />
+			<ColoredText>sudo [COMMAND]</ColoredText> - execute a command as superuser
+			<br />
+			<ColoredText>uptime</ColoredText> - show how long the system has been running
 			<br />
 			<ColoredText>whereami</ColoredText> - location of the system
 			<br />

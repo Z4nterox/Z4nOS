@@ -4,8 +4,14 @@ import ColoredText from '@/components/general/ColoredText';
 import SymbolText from '@/components/general/SymbolText';
 import About from '@/files/About';
 import Contact from '@/files/Contact';
-import Frameworks from '@/files/skills/Frameworks';
-import Languages from '@/files/skills/Languages';
+import Skills from '@/files/Skills';
+import Todo from '@/files/Todo';
+import Bashrc from '@/files/config/Bashrc';
+import Gitconfig from '@/files/config/Gitconfig';
+import Notes from '@/files/documents/Notes';
+import Resume from '@/files/documents/Resume';
+import Passwords from '@/files/secrets/Passwords';
+import Rickroll from '@/files/secrets/Rickroll';
 import { Stargate } from '@/fonts/fonts';
 import { Segoe } from '@/fonts/fonts';
 import classNames from 'classnames';
@@ -28,13 +34,22 @@ interface Dictionary<T> {
 
 const fileStructure: Dictionary<FileItem[]> = {
 	'/home/z4nterox': [
-		{ name: 'about.txt', content: <About />, isDirectory: false },
-		{ name: 'skills', isDirectory: true },
-		{ name: 'contact.txt', content: <Contact />, isDirectory: false },
+		{ name: '.bashrc', content: <Bashrc />, isDirectory: false },
+		{ name: '.gitconfig', content: <Gitconfig />, isDirectory: false },
+		{ name: '.secrets', isDirectory: true },
+		{ name: 'documents', isDirectory: true },
 	],
-	'/home/z4nterox/skills': [
-		{ name: 'languages', content: <Languages />, isDirectory: false },
-		{ name: 'frameworks', content: <Frameworks />, isDirectory: false },
+	'/home/z4nterox/.secrets': [
+		{ name: 'passwords.txt', content: <Passwords />, isDirectory: false },
+		{ name: 'important_file.txt', content: <Rickroll />, isDirectory: false },
+	],
+	'/home/z4nterox/documents': [
+		{ name: 'notes.txt', content: <Notes />, isDirectory: false },
+		{ name: 'resume.txt', content: <Resume />, isDirectory: false },
+		{ name: 'skills.txt', content: <Skills />, isDirectory: false },
+		{ name: 'todo.txt', content: <Todo />, isDirectory: false },
+		{ name: 'about.txt', content: <About />, isDirectory: false },
+		{ name: 'contact.txt', content: <Contact />, isDirectory: false },
 	],
 };
 
@@ -51,6 +66,7 @@ export default function CLI(props: CLIProps) {
 	const [commandHistoryIndex, setCommandHistoryIndex] = useState<number>(-1);
 	const [matches, setMatches] = useState<string[]>([]);
 	const [matchIndex, setMatchIndex] = useState<number>(-1);
+	const [startTime] = useState<Date>(new Date());
 
 	const [currentPath, setCurrentPath] = useState<string>('/home/z4nterox');
 
@@ -79,17 +95,20 @@ export default function CLI(props: CLIProps) {
 		),
 		cat: (file?: string) => Command.cat(fileStructure, currentPath, file),
 		cd: (directory?: string) => {
-			Command.cd(currentPath, setCurrentPath, directory);
-			return null;
+			return Command.cd(fileStructure, currentPath, setCurrentPath, directory) ?? null;
 		},
 		clear: () => null,
 		codesolver: (problem: string) => Command.solver(problem),
+		date: () => Command.date(),
+		echo: (text?: string) => Command.echo(text),
 		help: Command.help(),
+		history: () => Command.history(commandHistory),
 		logout: () => {
 			props.LogOut();
 			return null;
 		},
 		ls: (file?: string) => Command.ls(fileStructure, currentPath, file),
+		man: (command?: string) => Command.man(command),
 		mkdir: 'mkdir: Permission denied',
 		nano: 'nano: Permission denied',
 		neofetch: <Neofetch />,
@@ -102,9 +121,11 @@ export default function CLI(props: CLIProps) {
 			props.Restart();
 			return null;
 		},
-		rm: 'rm: Permission denied',
+		rm: (args?: string) => (args?.includes('-rf') ? Command.rm_rf() : 'rm: Permission denied'),
 		source: <a href="https://github.com/Z4nterox/Z4nOS">https://github.com/Z4nterox/Z4nOS</a>,
+		sudo: () => Command.sudo(),
 		touch: 'touch: Permission denied',
+		uptime: () => Command.uptime(startTime),
 		vim: 'vim: Permission denied',
 		whereami: (
 			<div>

@@ -160,7 +160,7 @@ export default function Statusbar({ battery }: { battery: number }) {
 					icon=""
 					text={datetime.toLocaleTimeString('en', { hour: 'numeric', hour12: false, minute: 'numeric', second: 'numeric' })}
 				/>
-				<StatusItem className={styles.blockStatusCopyright} text="© 2024 Z4nterox" hideSeparator />
+				<StatusItem className={styles.blockStatusCopyright} text="© 2026 Z4nterox" hideSeparator />
 			</div>
 		</div>
 	);
