@@ -24,7 +24,7 @@ import * as Command from './Commands';
 
 interface FileItem {
 	name: string;
-	content?: JSX.Element;
+	content?: React.ReactNode;
 	isDirectory: boolean;
 }
 
