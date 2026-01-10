@@ -14,25 +14,27 @@ Follow these steps to set up and run the project locally:
 
 1. **Install Dependencies:**
    Run the following command to install all necessary npm packages:
-   ```bash
-   npm install
-   ```
+
+    ```bash
+    npm install
+    ```
 
 2. **Start the Development Server:**
    Launch the development server with:
-   ```bash
-   npm run dev
-   ```
-   Then, open your browser and go to [`http://localhost:3000/`](http://localhost:3000/) to see the website in action. If you make any changes, press `Ctrl + R` to reload the page if the changes are not reflected automatically through hot reload.
+
+    ```bash
+    npm run dev
+    ```
+
+    Then, open your browser and go to [`http://localhost:3000/`](http://localhost:3000/) to see the website in action. If you make any changes, press `Ctrl + R` to reload the page if the changes are not reflected automatically through hot reload.
 
 3. **Build for Production:**
    To generate static HTML pages for deployment, run:
-   ```bash
-   npm run build
-   ```
-   Once the build process is complete, you can find the generated files in the `out` folder, ready for deployment on your web server.
+    ```bash
+    npm run build
+    ```
+    Once the build process is complete, you can find the generated files in the `out` folder, ready for deployment on your web server.
 
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
