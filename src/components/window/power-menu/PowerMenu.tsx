@@ -45,7 +45,7 @@ export default function PowerMenu(props: PowerMenuProps) {
 				tabIndex={-1}
 				style={{ cursor: 'pointer' }}
 			>
-				<SymbolText className="powerButton">襤</SymbolText>
+				<SymbolText className="powerButton">襤</SymbolText>
 			</div>
 			<div
 				onClick={props.Restart}
@@ -65,9 +65,9 @@ export default function PowerMenu(props: PowerMenuProps) {
 				tabIndex={-1}
 				style={{ cursor: 'pointer' }}
 			>
-				<SymbolText className="logoutButton"></SymbolText>
+				<SymbolText className="logoutButton"></SymbolText>
 			</div>
-			<SymbolText className="settingsButton">漣</SymbolText>
+			<SymbolText className="settingsButton">漣</SymbolText>
 		</div>
 	);
 }

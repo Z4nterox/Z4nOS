@@ -28,7 +28,7 @@ export default function LowBattery() {
 				}}
 				style={{ color: 'var(--color-error)', fontSize: '96px', opacity: ' 0%' }}
 			>
-				<SymbolText></SymbolText>
+				<SymbolText></SymbolText>
 				<div style={{ fontSize: '48px' }}>Please reload while Z4nOS is recharging.</div>
 			</motion.div>
 		</div>
