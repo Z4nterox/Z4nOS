@@ -54,7 +54,7 @@ export default function Home() {
 		);
 	}
 
-	if (battery == 0) {
+	if (battery <= 0) {
 		return (
 			<main style={{ width: '100%', height: '100%' }}>
 				<LowBattery />
