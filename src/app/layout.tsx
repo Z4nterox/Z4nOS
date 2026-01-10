@@ -2,9 +2,9 @@ import type { Metadata } from 'next';
 
 import React from 'react';
 
-import '@/styles/globals.css';
+import { Segoe } from '@/fonts/fonts';
 
-import { Segoe } from './fonts';
+import '@/styles/globals.css';
 
 export const metadata: Metadata = {
 	title: 'Z4nOS',
