@@ -3,7 +3,6 @@ import Image from 'next/image';
 import React, { useEffect, useState } from 'react';
 
 import SymbolText from '@/components/general/SymbolText';
-import DesignTokens from 'DesignTokens';
 import axios from 'axios';
 import classNames from 'classnames';
 
@@ -31,7 +30,7 @@ export default function PowerMenu(props: PowerMenuProps) {
 		<div className={classNames(styles.powerMenu, 'console', 'unselectable')} style={{ fontSize: '36px' }}>
 			<a href="https://github.com/Z4nterox" target="_blank" rel="noopener noreferrer" style={{ height: '48px', width: '48px' }}>
 				<Image
-					style={{ width: '48px', height: '48px', borderRadius: DesignTokens.size.borderRadius.value }}
+					style={{ width: '48px', height: '48px', borderRadius: 'var(--size-border-radius)' }}
 					src={avatarURL ? avatarURL : '/images/FallbackAvatar.png'}
 					alt="GithubAvatar"
 					width={55}
@@ -46,7 +45,7 @@ export default function PowerMenu(props: PowerMenuProps) {
 				tabIndex={-1}
 				style={{ cursor: 'pointer' }}
 			>
-				<SymbolText className="powerButton">襤</SymbolText>
+				<SymbolText className="powerButton">襤</SymbolText>
 			</div>
 			<div
 				onClick={props.Restart}
@@ -66,9 +65,9 @@ export default function PowerMenu(props: PowerMenuProps) {
 				tabIndex={-1}
 				style={{ cursor: 'pointer' }}
 			>
-				<SymbolText className="logoutButton"></SymbolText>
+				<SymbolText className="logoutButton"></SymbolText>
 			</div>
-			<SymbolText className="settingsButton">漣</SymbolText>
+			<SymbolText className="settingsButton">漣</SymbolText>
 		</div>
 	);
 }

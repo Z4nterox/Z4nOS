@@ -1,9 +1,7 @@
-@design-tokens url('../../../../design-tokens.json') format('style-dictionary3');
-
 .statusbar {
 	height: 100%;
 	width: 100%;
-	background-color: design-token('color.statusbar');
+	background-color: var(--color-statusbar);
 	overflow: hidden;
 	display: flex;
 	flex-direction: row;

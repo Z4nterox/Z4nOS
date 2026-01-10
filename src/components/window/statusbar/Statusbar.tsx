@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 
 import SymbolText from '@/components/general/SymbolText';
 import { isMobileOrTablet } from '@/utils/DeviceCheck';
-import DesignTokens from 'DesignTokens';
 import classNames from 'classnames';
 
 import styles from './Statusbar.module.css';
@@ -34,10 +33,10 @@ export default function Statusbar({ battery }: { battery: number }) {
 	const [wifi, setWifi] = useState(62 - Math.random() * 4);
 	const [wifiState, setWifiState] = useState('down');
 	const [ethernetState, setEthernetState] = useState('down');
-	const [batteryIcon, setBatteryIcon] = useState('');
+	const [batteryIcon, setBatteryIcon] = useState('');
 	const [batteryTime, setBatteryTime] = useState('08:00');
 	const [cpu, setCPU] = useState(20);
-	const [cpuTempIcon, setCPUTempIcon] = useState('');
+	const [cpuTempIcon, setCPUTempIcon] = useState('');
 	const [cpuTemp, setCPUTemp] = useState(0);
 	const [datetime, setDatetime] = useState<Date | null>(null);
 
@@ -71,7 +70,7 @@ export default function Statusbar({ battery }: { battery: number }) {
 			.toString()
 			.padStart(2, '0');
 
-		const icons = ['', '', '', '', '', '', '', '', '', ''];
+		const icons = ['', '', '', '', '', '', '', '', '', ''];
 		setBatteryIcon(icons[Math.floor(battery / 10)]);
 		setBatteryTime(`${hours}:${minutes}`);
 	}, [battery]);
@@ -87,7 +86,7 @@ export default function Statusbar({ battery }: { battery: number }) {
 	useEffect(() => {
 		const newCPUTemp = 35 - Math.random() * 6;
 		setCPUTemp(newCPUTemp);
-		setCPUTempIcon(newCPUTemp >= 80 ? '' : newCPUTemp >= 60 ? '' : newCPUTemp >= 40 ? '' : newCPUTemp >= 20 ? '' : '');
+		setCPUTempIcon(newCPUTemp >= 80 ? '' : newCPUTemp >= 60 ? '' : newCPUTemp >= 40 ? '' : newCPUTemp >= 20 ? '' : '');
 	}, []);
 
 	useEffect(() => {
@@ -100,7 +99,7 @@ export default function Statusbar({ battery }: { battery: number }) {
 			}
 
 			setCPUTemp(newCPUTemp);
-			setCPUTempIcon(newCPUTemp >= 80 ? '' : newCPUTemp >= 60 ? '' : newCPUTemp >= 40 ? '' : newCPUTemp >= 20 ? '' : '');
+			setCPUTempIcon(newCPUTemp >= 80 ? '' : newCPUTemp >= 60 ? '' : newCPUTemp >= 40 ? '' : newCPUTemp >= 20 ? '' : '');
 		}, 7000);
 
 		return () => clearInterval(cpuTempTimer);
@@ -120,44 +119,44 @@ export default function Statusbar({ battery }: { battery: number }) {
 			<div className={styles.blockStatus}>
 				<StatusItem
 					className={styles.blockStatusWifi}
-					icon=""
+					icon=""
 					text={wifiState}
-					color={wifiState === 'down' ? DesignTokens.color.error.value : DesignTokens.color.success.value}
+					color={wifiState === 'down' ? 'var(--color-error)' : 'var(--color-success)'}
 				/>
 				<StatusItem
 					className={styles.blockStatusEthernet}
-					icon=""
+					icon=""
 					text={ethernetState}
-					color={ethernetState === 'down' ? DesignTokens.color.error.value : DesignTokens.color.success.value}
+					color={ethernetState === 'down' ? 'var(--color-error)' : 'var(--color-success)'}
 				/>
 				<StatusItem
 					className={styles.blockStatusBattery}
 					icon={batteryIcon}
 					text={`${battery.toFixed(1)}% ${batteryTime}`}
-					color={battery > 40 ? '#FFF' : battery > 15 ? DesignTokens.color.warning.value : DesignTokens.color.error.value}
+					color={battery > 40 ? '#FFF' : battery > 15 ? 'var(--color-warning)' : 'var(--color-error)'}
 				/>
-				<StatusItem className={styles.blockStatusSound} icon="" text="muted (50%)" color={DesignTokens.color.warning.value} />
+				<StatusItem className={styles.blockStatusSound} icon="" text="muted (50%)" color="var(--color-warning)" />
 				<StatusItem
 					className={styles.blockStatusCPULoad}
 					icon="﬙"
 					text={`${cpu}%`}
-					color={cpu < 85 ? '#FFF' : DesignTokens.color.error.value}
+					color={cpu < 85 ? '#FFF' : 'var(--color-error)'}
 				/>
 				<StatusItem
 					className={styles.blockStatusCPUTemp}
 					icon={cpuTempIcon}
 					text={`${cpuTemp.toFixed(1)} °C`}
-					color={cpuTemp < 80 ? '#FFF' : DesignTokens.color.error.value}
+					color={cpuTemp < 80 ? '#FFF' : 'var(--color-error)'}
 				/>
 				<StatusItem
 					className={styles.blockStatusDatetime}
-					icon=""
+					icon=""
 					text={`${datetime.getDate()}.${datetime.getMonth() + 1}.${datetime.getFullYear()} `}
 					hideSeparator
 				/>
 				<StatusItem
 					className={styles.blockStatusDatetime}
-					icon=""
+					icon=""
 					text={datetime.toLocaleTimeString('en', { hour: 'numeric', hour12: false, minute: 'numeric', second: 'numeric' })}
 				/>
 				<StatusItem className={styles.blockStatusCopyright} text={`© ${new Date().getFullYear()} Z4nterox`} hideSeparator />

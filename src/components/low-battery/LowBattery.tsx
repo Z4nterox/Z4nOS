@@ -1,7 +1,6 @@
 import React from 'react';
 
 import SymbolText from '@/components/general/SymbolText';
-import DesignTokens from 'DesignTokens';
 import { motion } from 'framer-motion';
 
 export default function LowBattery() {
@@ -27,9 +26,9 @@ export default function LowBattery() {
 					repeat: Infinity,
 					repeatType: 'loop',
 				}}
-				style={{ color: DesignTokens.color.error.value, fontSize: '96px', opacity: ' 0%' }}
+				style={{ color: 'var(--color-error)', fontSize: '96px', opacity: ' 0%' }}
 			>
-				<SymbolText></SymbolText>
+				<SymbolText></SymbolText>
 				<div style={{ fontSize: '48px' }}>Please reload while Z4nOS is recharging.</div>
 			</motion.div>
 		</div>

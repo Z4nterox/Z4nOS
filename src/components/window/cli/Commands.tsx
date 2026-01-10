@@ -1,7 +1,6 @@
 import React from 'react';
 
 import ColoredText from '@/components/general/ColoredText';
-import DesignTokens from 'DesignTokens';
 
 interface FileItem {
 	name: string;
@@ -194,7 +193,7 @@ export function solver(problem: string) {
 	const link = 'https://stackoverflow.com/search?q=' + encodeURIComponent(problem);
 
 	return (
-		<a style={{ color: DesignTokens.color.primary.value }} href={link} target="_blank" rel="noopener noreferrer">
+		<a style={{ color: 'var(--color-primary)' }} href={link} target="_blank" rel="noopener noreferrer">
 			Solution
 		</a>
 	);

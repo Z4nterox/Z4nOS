@@ -1,8 +1,6 @@
 /** @type {import('postcss-load-config').Config} */
 const config = {
-	plugins: {
-		'@csstools/postcss-design-tokens': {},
-	},
+	plugins: {},
 };
 
 export default config;

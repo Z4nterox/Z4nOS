@@ -1,4 +1,13 @@
-@design-tokens url('../../design-tokens.json') format('style-dictionary3');
+:root {
+	--color-primary: #1793d1;
+	--color-statusbar: #1f343f;
+	--color-error: #f44336;
+	--color-success: #66bb6a;
+	--color-warning: #ffa726;
+
+	--size-gap: 8px;
+	--size-border-radius: 8px;
+}
 
 * {
 	box-sizing: border-box;
@@ -12,12 +21,12 @@
 
 *::-webkit-scrollbar-track {
 	background: transparent;
-	border-radius: design-token('size.borderRadius');
+	border-radius: var(--size-border-radius);
 }
 
 *::-webkit-scrollbar-thumb {
 	background-color: transparent;
-	border-radius: design-token('size.borderRadius');
+	border-radius: var(--size-border-radius);
 	border: 4px solid #f1f1f1;
 }
 
@@ -56,9 +65,9 @@ main {
 
 .console {
 	background-color: rgb(23, 25, 26, 0.8);
-	border-radius: design-token('size.borderRadius');
+	border-radius: var(--size-border-radius);
 	color: #fff;
-	padding: design-token('size.gap');
+	padding: var(--size-gap);
 }
 
 .kernelPanic {
@@ -72,6 +81,6 @@ main {
 }
 
 .terminalString {
-	color: design-token('color.primary');
+	color: var(--color-primary);
 	font-weight: bold;
 }

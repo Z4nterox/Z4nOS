@@ -1,15 +1,13 @@
-@design-tokens url('../../../design-tokens.json') format('style-dictionary3');
-
 .window {
 	box-sizing: border-box;
 	width: 100%;
 	height: calc(100% - 20px);
-	padding: design-token('size.gap');
+	padding: var(--size-gap);
 	background-image: url('/images/Background.jpeg');
 	background-repeat: no-repeat;
 	background-size: cover;
 	display: grid;
-	grid-gap: design-token('size.gap');
+	grid-gap: var(--size-gap);
 	grid-template-areas:
 		'cli calendar weather powerMenu'
 		'cli neofetch neofetch neofetch';
@@ -18,7 +16,7 @@
 	overflow: hidden;
 }
 
-@media only screen and (max-width: design-token('layout.maxWidth.step1')) {
+@media only screen and (max-width: 1392px) {
 	.window {
 		grid-template-areas:
 			'cli calendar'
@@ -27,9 +25,7 @@
 	}
 }
 
-@media only screen and (max-width: design-token('layout.maxWidth.step2')),
-	only screen and (max-height: design-token('layout.maxHeight.step2')),
-	only screen and (min-height: design-token('layout.minHeight.step1')) {
+@media only screen and (max-width: 1024px), only screen and (max-height: 760px), only screen and (min-height: 1040px) {
 	.window {
 		grid-template-areas: 'cli';
 		grid-template-columns: 1fr;

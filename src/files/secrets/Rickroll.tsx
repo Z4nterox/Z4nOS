@@ -1,12 +1,10 @@
 import React from 'react';
 
-import DesignTokens from 'DesignTokens';
-
 export default function Rickroll() {
 	return (
 		<div>
 			<a
-				style={{ color: DesignTokens.color.primary.value }}
+				style={{ color: 'var(--color-primary)' }}
 				href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
 				target="_blank"
 				rel="noopener noreferrer"

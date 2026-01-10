@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 
 import SymbolText from '@/components/general/SymbolText';
-import DesignTokens from 'DesignTokens';
 import { motion } from 'framer-motion';
 
 interface Props {
@@ -134,10 +133,10 @@ export default function Power(props: Props) {
 						onMouseDown={() => {}}
 						role="button"
 						tabIndex={0}
-						style={{ lineHeight: '0.5', color: DesignTokens.color.primary.value, cursor: 'pointer' }}
+						style={{ lineHeight: '0.5', color: 'var(--color-primary)', cursor: 'pointer' }}
 					>
 						<motion.div whileHover={{ fontSize: '112px' }} whileTap={{ fontSize: '100px' }} style={{ fontSize: '96px' }}>
-							<SymbolText>襤</SymbolText>
+							<SymbolText>襤</SymbolText>
 						</motion.div>
 					</motion.div>
 				</div>

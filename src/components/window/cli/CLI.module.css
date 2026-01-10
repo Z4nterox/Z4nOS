@@ -1,5 +1,3 @@
-@design-tokens url('../../../../design-tokens.json') format('style-dictionary3');
-
 .cli {
 	grid-area: cli;
 	overflow: hidden;

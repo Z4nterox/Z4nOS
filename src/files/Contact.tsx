@@ -1,7 +1,5 @@
 import React from 'react';
 
-import DesignTokens from 'DesignTokens';
-
 export default function Contact() {
 	return (
 		<div>
@@ -10,7 +8,7 @@ export default function Contact() {
 			<ul>
 				<li>
 					<a
-						style={{ color: DesignTokens.color.primary.value }}
+						style={{ color: 'var(--color-primary)' }}
 						href="https://github.com/Z4nterox"
 						target="_blank"
 						rel="noopener noreferrer"
@@ -20,19 +18,14 @@ export default function Contact() {
 					</a>
 				</li>
 				<li>
-					<a
-						style={{ color: DesignTokens.color.primary.value }}
-						href="https://discord.com/"
-						target="_blank"
-						rel="noopener noreferrer"
-					>
+					<a style={{ color: 'var(--color-primary)' }} href="https://discord.com/" target="_blank" rel="noopener noreferrer">
 						{' '}
 						Discord:{' '}
 					</a>
 					z4nterox
 				</li>
 				<li>
-					<a style={{ color: DesignTokens.color.primary.value }} href="mailto:contact@z4nterox.dev">
+					<a style={{ color: 'var(--color-primary)' }} href="mailto:contact@z4nterox.dev">
 						contact@z4nterox.dev
 					</a>
 				</li>

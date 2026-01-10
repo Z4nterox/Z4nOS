@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 
-import DesignTokens from 'DesignTokens';
 import classNames from 'classnames';
 
 import styles from './Calendar.module.css';
@@ -39,7 +38,7 @@ function AsciiCalendar() {
 			for (let i = 1; i <= numberOfDays; i++) {
 				const isToday = i === datetime.getDate();
 				newDaysArray.push(
-					<span key={`day-${i}`} style={{ color: isToday ? DesignTokens.color.primary.value : undefined }}>
+					<span key={`day-${i}`} style={{ color: isToday ? 'var(--color-primary)' : undefined }}>
 						{new Date(year, month, firstDayOfMonth.getDate() + i - 1).toLocaleString('en-US', { weekday: 'short' }) === 'Mon'
 							? i.toString().padStart(2, ' ')
 							: i.toString().padStart(4, ' ')}
@@ -62,10 +61,10 @@ function AsciiCalendar() {
 
 	return (
 		<div style={{ width: '230px' }}>
-			<div style={{ color: DesignTokens.color.primary.value, textAlign: 'center', fontSize: '20px' }}>
+			<div style={{ color: 'var(--color-primary)', textAlign: 'center', fontSize: '20px' }}>
 				{datetime.toLocaleString('en', { month: 'long' })} {datetime.getFullYear()}
 			</div>
-			<pre style={{ color: DesignTokens.color.primary.value, textAlign: 'center', fontSize: '16px', margin: '0' }}>
+			<pre style={{ color: 'var(--color-primary)', textAlign: 'center', fontSize: '16px', margin: '0' }}>
 				Mo {''} Tu {''} We {''} Th {''} Fr {''} Sa {''} Su
 			</pre>
 			<pre id="days" style={{ fontSize: '16px' }}>
