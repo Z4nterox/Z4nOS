@@ -191,7 +191,7 @@ export function help() {
 }
 
 export function solver(problem: string) {
-	const link = 'https://stackoverflow.com/search?q=' + problem.replace(' ', '+');
+	const link = 'https://stackoverflow.com/search?q=' + encodeURIComponent(problem);
 
 	return (
 		<a style={{ color: DesignTokens.color.primary.value }} href={link} target="_blank" rel="noopener noreferrer">
